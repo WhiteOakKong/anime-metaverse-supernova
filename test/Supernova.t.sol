@@ -6,7 +6,7 @@ import { PRBTest } from "@prb/test/PRBTest.sol";
 import { console2 } from "forge-std/console2.sol";
 import { StdCheats } from "forge-std/StdCheats.sol";
 
-import { SuperNova } from "../src/SuperNova.sol";
+import { SuperNova } from "../src/Supernova.sol";
 import { BurntSouls } from "../src/BurntSouls.sol";
 import { MockSoulMate } from "../src/Mocks/MockSoul.sol";
 import { ECDSA } from "openzeppelin/contracts/utils/cryptography/ECDSA.sol";
