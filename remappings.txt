@@ -1,3 +1,7 @@
 @prb/test/=lib/prb-test/src/
 forge-std/=lib/forge-std/src/
 src/=src/
+openzeppelin/=lib/openzeppelin-contracts/
+ERC721A/=lib/ERC721A/
+operator-filter-registry/=lib/operator-filter-registry
+
