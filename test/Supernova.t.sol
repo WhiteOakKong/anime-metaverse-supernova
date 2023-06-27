@@ -350,9 +350,9 @@ contract SupernovaTest is PRBTest, StdCheats {
     }
 
     // Function updateExtension - TEST CONDITIONS
-    //set uriExtension to _ext
-    //emit ExtensionUpdated event
-    //revert if msg.sender is not owner
+    //✅ set uriExtension to _ext
+    //✅ emit ExtensionUpdated event
+    //✅ revert if msg.sender is not owner
 
     function test_updateExtension_success_updateWithOwner() public {
         vm.expectEmit(false, false, false, true);
@@ -369,9 +369,9 @@ contract SupernovaTest is PRBTest, StdCheats {
     }
 
     // Function updateBaseURI - TEST CONDITIONS
-    //set baseURI to baseURI_
-    //emit BaseURIUpdated event
-    //revert if msg.sender is not owner
+    //✅ set baseURI to baseURI_
+    //✅ emit BaseURIUpdated event
+    //✅ revert if msg.sender is not owner
 
     function test_setBaseURI_success_updateWithOwner() public {
         vm.expectEmit(false, false, false, true);
@@ -388,8 +388,8 @@ contract SupernovaTest is PRBTest, StdCheats {
     }
 
     // Function togglePublic - TEST CONDITIONS
-    //set publicMinting to !publicMinting
-    //revert if msg.sender is not owner
+    //✅ set publicMinting to !publicMinting
+    //✅ revert if msg.sender is not owner
 
     function test_togglePublic_success_updateWithOwner() public {
         superNova.togglePublic();
@@ -404,8 +404,8 @@ contract SupernovaTest is PRBTest, StdCheats {
     }
 
     // Function addTreasuryWallets - TEST CONDITIONS
-    //set treasuryWallets[_wallet] to true
-    //revert if msg.sender is not owner
+    //✅ set treasuryWallets[_wallet] to true
+    //✅ revert if msg.sender is not owner
 
     function test_addTreasuryWallet_success_updateWithOwner() public {
         for (uint256 i = 0; i < accts.length; i++) {
@@ -422,8 +422,8 @@ contract SupernovaTest is PRBTest, StdCheats {
     }
 
     // Function withdraw - TEST CONDITIONS
-    //revert if msg.sender is not owner
-    //transfer all funds from contract to msg.sender
+    //✅ revert if msg.sender is not owner
+    //✅ transfer all funds from contract to msg.sender
 
     function test_withdraw_success_withdrawOwner() public {
         uint256 beforeBalance = address(this).balance;

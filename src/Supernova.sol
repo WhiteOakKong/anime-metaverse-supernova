@@ -135,8 +135,6 @@ contract SuperNova is ERC721A, Ownable, DefaultOperatorFilterer {
         return string(abi.encodePacked(baseURI, Strings.toString(_tokenId), uriExtension));
     }
 
-    //revert if token does not exist
-
     ///@notice internal signature validation function.
     ///@param signature - signature for ECDSA recovery.
     ///@param burntTokens - array of soulmate token ids.
@@ -189,18 +187,6 @@ contract SuperNova is ERC721A, Ownable, DefaultOperatorFilterer {
         emit Supernova(_totalMinted(), burntsouls, burntsouls.length, character, hype);
     }
 
-    //TEST CONDITIONS
-    //only mint if wallet is WL
-    //only mint if public minting is enabled
-    //only mint if burn quantity is between 1 and 5
-    //only mint if signature is valid
-    //transfer all burnt tokens to burn address
-    //revert if tokens are not owned by msg.sender
-    //revert if tokens are not approved for transfer
-    //mint burnt souls to msg.sender
-    //mint one supernova to msg.sender
-    //emit Supernova event
-
     ///@notice Function to set the relayer address.
     ///@param _relayer - address of the relayer.
     function updateRelayer(address _relayer) external onlyOwner {
@@ -224,10 +210,6 @@ contract SuperNova is ERC721A, Ownable, DefaultOperatorFilterer {
         emit ExtensionUpdated(_ext);
     }
 
-    //set uriExtension to _ext
-    //emit ExtensionUpdated event
-    //revert if msg.sender is not owner
-
     ///@notice Function to set the baseURI for the contract.
     ///@param baseURI_ - baseURI for the contract.
     function setBaseURI(string memory baseURI_) external onlyOwner {
@@ -240,16 +222,10 @@ contract SuperNova is ERC721A, Ownable, DefaultOperatorFilterer {
         publicMinting = !publicMinting;
     }
 
-    //set publicMinting to !publicMinting
-    //revert if msg.sender is not owner
-
     ///@notice Function to add a treasury wallet. Access control for team mint.
     function addTreasuryWallet(address _wallet) external onlyOwner {
         treasuryWallets[_wallet] = true;
     }
-
-    //set treasuryWallets[_wallet] to true
-    //revert if msg.sender is not owner
 
     ///@notice Function to withdraw all funds from the contract. Should not be necessary, but just in case.
     function withdraw() external onlyOwner {
